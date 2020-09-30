@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Configuration status = "WARN">
+    <Appenders>
+        <RollingFile name = "LOGS" fileName = "logs/logs.txt" filePattern = "logs/logs-archive/log-%d{MM-dd-yyyy}.zip">
+            <PatternLayout pattern = "[%p %c %d{dd-MM-yyyy, HH:mm:ss}] %m%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy minSize = "0"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name = "TRANSLATIONS" fileName = "logs/translations.txt" filePattern = "logs/translations-archive/translations-%d{MM-dd-yyyy}.zip">
+            <PatternLayout pattern = "[%p %c %d{dd-MM-yyyy, HH:mm:ss}] %m%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy minSize = "0"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level = "INFO" additivity = "false">
+            <AppenderRef ref = "LOGS"/>
+        </Root>
+
+        <logger name = "TRANSLATE" level = "INFO" additivity = "false">
+            <AppenderRef ref = "TRANSLATIONS" />
+        </logger>
+    </Loggers>
+</Configuration>

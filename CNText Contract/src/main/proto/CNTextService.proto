@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+option java_package = "ipl.isel.cn.group2.contract";
+
+import "google/protobuf/empty.proto";
+
+message Username {
+  string value = 1;
+}
+
+message Session {
+  string id = 1;
+}
+
+message Submission {
+  string id = 1;
+}
+
+message ImageTextTranslated{
+  string translatedFrom = 1;
+  string translatedTo = 2;
+  string translatedText = 3;
+}
+
+message Request {
+  Session session = 1;
+  Submission submission = 2;
+}
+
+message Image {
+  message Metadata {
+    Session session = 1;
+    string name = 2;
+    int64 size = 3;
+    string translateTo = 4;
+  }
+
+  oneof chunkOrMetadata {
+    Metadata metadata = 1;
+    bytes chunk = 2;
+  }
+}
+
+service CNTextService {
+  rpc SignIn(Username) returns (Session);
+  rpc SignOut(Session) returns (google.protobuf.Empty);
+  rpc SubmitImageTextTranslationRequest(stream Image) returns (Submission);
+  rpc RequestImageTextTranslationResult(Request) returns (ImageTextTranslated);
+}

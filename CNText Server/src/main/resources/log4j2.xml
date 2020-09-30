@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Configuration status = "WARN">
+    <Appenders>
+        <RollingFile name = "FILE" fileName = "logs/logs.txt" filePattern = "logs/archive/log-%d{MM-dd-yyyy}.zip">
+            <PatternLayout pattern = "[%p %c %d{dd-MM-yyyy, HH:mm:ss}] %m%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy minSize = "0"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level = "INFO" additivity = "false">
+            <AppenderRef ref = "FILE"/>
+        </Root>
+    </Loggers>
+</Configuration>
