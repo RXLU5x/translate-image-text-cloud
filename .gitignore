@@ -1,23 +1,59 @@
-# Compiled class file
-*.class
+### IntelliJ IDEA ###
 
-# Log file
-*.log
+# User-specific stuff
+**/.idea/**/dictionaries
+**/.idea/**/shelf
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
 
-# BlueJ files
-*.ctxt
+# Generated files
+**/.idea/**/contentModel.xml
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Sensitive files
+*.iml
+*.ipr
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+**/.idea/artifacts
+**/.idea/modules
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+**/.idea/compiler.xml
+**/.idea/modules.xml
+**/.idea/misc.xml
+
+**/.idea/**/libraries
+
+**/.idea/**/dataSources/
+
+**/.idea/**/dataSources.ids
+
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+**/.idea/**/uiDesigner.xml
+**/.idea/**/dbnavigator.xml
+
+# Building
+**/out/
+
+### Maven ###
+
+**/target/
+
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+dependency-reduced-pom.xml
+
+**/.mvn/wrapper/maven-wrapper.jar
+**/.mvn/timing.properties
+
+release.properties
+buildNumber.properties
+
+**/logs
+**/images
+**/*.jar
+**/*.bat
